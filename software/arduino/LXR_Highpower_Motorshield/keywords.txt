@@ -1,0 +1,22 @@
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+LXR_highpower_motorshield	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+begin	KEYWORD2
+set_speed	KEYWORD2
+get_speed	KEYWORD2
+set_direction	KEYWORD2
+get_direction	KEYWORD2
+get_current_half_brigde_1	KEYWORD2
+get_current_half_brigde_2	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
