@@ -39,7 +39,7 @@ void setup() {
   LXR_highpower_motorshield::begin();
   LXR_highpower_motorshield::set_direction(FWD);
   Serial.begin(115200);
-  //Serial.setTimeout(SERIAL_TIMEOUT_MS);
+  Serial.setTimeout(SERIAL_TIMEOUT_MS);
 }
 
 void loop() {
