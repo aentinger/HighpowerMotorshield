@@ -2,6 +2,7 @@
  * @author Alexander Entinger, MSc / LXRobotics
  * @brief this moduls maps the receiver pulse width to an appopriate motor action
  * @file control.h
+ * @license CC BY-NC-SA 3.0 ( http://creativecommons.org/licenses/by-nc-sa/3.0/ )
  */
 
 #ifndef CONTROL_H_

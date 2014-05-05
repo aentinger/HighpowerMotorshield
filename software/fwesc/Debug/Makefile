@@ -36,6 +36,7 @@ SUBDIRS :=
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
+../adc.cpp \
 ../input.cpp \
 ../linear_mapper.cpp \
 ../main.cpp \
@@ -50,6 +51,7 @@ ASM_SRCS +=
 
 
 OBJS +=  \
+adc.o \
 input.o \
 linear_mapper.o \
 main.o \
@@ -57,6 +59,7 @@ motor.o \
 control.o
 
 OBJS_AS_ARGS +=  \
+adc.o \
 input.o \
 linear_mapper.o \
 main.o \
@@ -64,6 +67,7 @@ motor.o \
 control.o
 
 C_DEPS +=  \
+adc.d \
 input.d \
 linear_mapper.d \
 main.d \
@@ -71,6 +75,7 @@ motor.d \
 control.d
 
 C_DEPS_AS_ARGS +=  \
+adc.d \
 input.d \
 linear_mapper.d \
 main.d \
@@ -88,6 +93,8 @@ OUTPUT_FILE_DEP:= ./makedep.mk
 LIB_DEP+= 
 
 # AVR32/GNU C Compiler
+
+
 
 
 

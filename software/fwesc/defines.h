@@ -2,6 +2,7 @@
  * @author Alexander Entinger, MSc / LXRobotics
  * @brief this file contains defines for the fw esc
  * @file defines.h
+ * @license CC BY-NC-SA 3.0 ( http://creativecommons.org/licenses/by-nc-sa/3.0/ )
  */
 
 #ifndef DEFINES_H_

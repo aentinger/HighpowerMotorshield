@@ -2,6 +2,7 @@
 * @author Alexander Entinger, BSc
 * @brief this file implements a linear mapper for adapting signal ranges between various functions
 * @file linear_mapper.h
+* @license CC BY-NC-SA 3.0 ( http://creativecommons.org/licenses/by-nc-sa/3.0/ )
 */
 
 #ifndef LINEAR_MAPPER_H_
@@ -20,6 +21,11 @@ public:
 	 * @param output_max maximum output value
 	 */
 	linear_mapper(int16_t const input_min, int16_t const input_max, int16_t const output_min, int16_t const output_max);
+	
+	/** 
+	 * @brief reinitializes this linear mapper
+	 */
+	void init(int16_t const input_min, int16_t const input_max, int16_t const output_min, int16_t const output_max);
 
 	/**
 	* @brief performs the linear mapping 

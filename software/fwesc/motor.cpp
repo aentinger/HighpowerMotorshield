@@ -2,10 +2,12 @@
  * @author Alexander Entinger, MSc / LXRobotics
  * @brief this module implements the control of the motor using the lxrobotics highpower motorshield
  * @file motor.cpp
+ * @license CC BY-NC-SA 3.0 ( http://creativecommons.org/licenses/by-nc-sa/3.0/ )
  */
 
 #include "motor.h"
 #include <avr/io.h>
+#include <avr/interrupt.h>
 
 /* DEFINE SECTION */
 // IN1 = D5 = PD5 = OC0B
@@ -50,8 +52,8 @@ void motor::init() {
 	INH_PORT |= INH;
 	// enable phase correct timer mode
 	TCCR0A |= (1<<WGM00);
-	// enable timer with prescaler 8
-	TCCR0B |= (1<<CS01);
+	// enable timer with prescaler 64
+	TCCR0B |= (1<<CS01) | (1<<CS00);
 }
 
 /**
@@ -71,4 +73,18 @@ void motor::set_speed(uint8_t const speed) {
 	m_motor_state.speed = speed;
 	OCR0A = m_motor_state.speed;
 	OCR0B = m_motor_state.speed;
+}
+
+/**
+ * @brief disables the h bridge in case of e.g. over current
+ */
+void motor::disable() {
+	INH_PORT &= ~INH;
+}
+
+/**
+ * @brief enables the h bridge again
+ */
+void motor::enable() {
+	INH_PORT |= INH;
 }
