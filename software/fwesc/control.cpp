@@ -14,7 +14,7 @@
 #include <avr/io.h>
 
 /* GLOBAL CONSTANT SECTION */
-static uint8_t const DEADZONE = 15;
+static uint8_t const DEADZONE = 20;
 static uint16_t const CH1_PULSE_WIDTH_MIN_US = 1120;
 static uint16_t const CH1_PULSE_WIDTH_MAX_US = 1910;
 static uint16_t const CH2_PULSE_WIDTH_MIN_US = 1120;
@@ -48,7 +48,7 @@ int16_t abs(int16_t const val);
 void calibrate();
 void sort(uint16_t *data, uint8_t const length);
 void swap(uint16_t *elem1, uint16_t *elem2);
-uint16_t average(uint16_t const *data, uint8_t const length);
+uint16_t median(uint16_t const *data, uint8_t const length);
 
 
 /* FUNCTION SECTION */
@@ -112,10 +112,10 @@ void control::run() {
 		
 		// simple delta mixing
 #ifdef RIGHT_MOTOR
-		ch1_motor_value += (ch2_motor_value / 2);
+		ch1_motor_value += ch2_motor_value;
 #endif
 #ifdef LEFT_MOTOR
-		ch1_motor_value -= (ch2_motor_value / 2);
+		ch1_motor_value -= ch2_motor_value;
 #endif
 		
 		// limit to +/- 255
@@ -190,8 +190,8 @@ void calibrate() {
 		sort(ch1, MAX_RECEIVED_PULSES);
 		sort(ch2, MAX_RECEIVED_PULSES);
 		// drop the two lowest and highest values and average
-		m_channel_1.neutral_pulse_width_us = average(ch1 + 2, MAX_RECEIVED_PULSES - 4);
-		m_channel_2.neutral_pulse_width_us = average(ch2 + 2, MAX_RECEIVED_PULSES - 4);
+		m_channel_1.neutral_pulse_width_us = median(ch1 + 2, MAX_RECEIVED_PULSES - 4);
+		m_channel_2.neutral_pulse_width_us = median(ch2 + 2, MAX_RECEIVED_PULSES - 4);
 		// recalibrate the linear mappers
 		m_mapper_1_channel_1.init(CH1_PULSE_WIDTH_MIN_US, m_channel_1.neutral_pulse_width_us, (-1)*(1<<14), 0);
 		m_mapper_2_channel_1.init(m_channel_1.neutral_pulse_width_us, CH1_PULSE_WIDTH_MAX_US, 0, (1<<14));
@@ -230,10 +230,6 @@ void swap(uint16_t *elem1, uint16_t *elem2) {
 /** 
  * @brief calculates the average of an array
  */
-uint16_t average(uint16_t const *data, uint8_t const length) {
-	uint32_t sum = 0;
-	uint8_t i=0; for(; i<length; i++) {
-		sum += (uint32_t)(data[i]);
-	}
-	return (uint16_t)(sum/(uint32_t)(length));
+uint16_t median(uint16_t const *data, uint8_t const length) {
+	return data[length/2];
 }

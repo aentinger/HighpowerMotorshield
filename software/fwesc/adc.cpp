@@ -38,7 +38,7 @@ static volatile E_SELECTED_CURRENT_SENSOR m_selected_current_sensor = IS1;
 // 1 A = 0.1 V
 // 1024 * 0.1 V / 5 V = 20.48 = 20
 static uint16_t const CURRENT_SENSE_1_A = 20;
-static uint16_t const CURRENT_SENSE_20_A = CURRENT_SENSE_1_A * 20;
+static uint16_t const CURRENT_SENSE_30_A = CURRENT_SENSE_1_A * 30;
 
 /* FUNCTION SECTION */
 
@@ -71,7 +71,7 @@ void adc::init() {
  */
 ISR(ADC_vect) {
 	
-	if(ADC > CURRENT_SENSE_20_A) {
+	if(ADC > CURRENT_SENSE_30_A) {
 		motor::disable();
 	} else {
 		motor::enable();
