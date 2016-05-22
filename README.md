@@ -1,11 +1,15 @@
-LXR_Highpower_Motorshield
-=========================
-Sämtliche Inhalte dieses Repositories stehen unter der CreativeCommons Lizenz CC BY-NC-SA 3.0 (Attribution-NonCommercial-ShareAlike 3.0 Unported)
+LXRobotics P5 HighpowerMotorshield
+==================================
 
-http://creativecommons.org/licenses/by-nc-sa/3.0/deed.de
+![LXRobotics P5 HighpowerMotorshield](https://www.lxrobotics.com/wp-content/uploads/mz_af_p5_side_small.jpg)
 
-http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en
+## Weitere Informationen / Further Information
 
-Weitere Informationen unter:
+* **DE:** https://www.lxrobotics.com/produkte/arduino-shields/highpower-motorshield
+* **EN:** https://www.lxrobotics.com/en/products/arduino-shields/highpower-motorshield
 
-http://www.lxrobotics.com/produkte/arduino-shields/highpower-motorshield
+## Lizenz / License
+SÃ¤mtliche Inhalte dieses Repositories stehen unter der CreativeCommons Lizenz CC BY-NC-SA 4.0 (Attribution-NonCommercial-ShareAlike 4.0 Unported)
+
+* **DE:** http://creativecommons.org/licenses/by-nc-sa/4.0/deed.de
+* **EN:** http://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
