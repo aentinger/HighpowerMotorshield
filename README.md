@@ -3,6 +3,9 @@ LXRobotics P5 HighpowerMotorshield
 
 ![LXRobotics P5 HighpowerMotorshield](https://www.lxrobotics.com/wp-content/uploads/mz_af_p5_side_small.jpg)
 
+## ROS Package for P5 HighpowerMotorshield
+https://github.com/lxrobotics/ardumotor
+
 ## Weitere Informationen / Further Information
 
 * **DE:** https://www.lxrobotics.com/produkte/arduino-shields/highpower-motorshield
