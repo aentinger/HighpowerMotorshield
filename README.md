@@ -1,13 +1,14 @@
-LXRobotics P5 HighpowerMotorshield
-==================================
+<a href="https://lxrobotics.com/"><img align="right" src="https://assets.lxrobotics.com/logo-old/lxrobotics.png" width="15%"></a>
+💾 Highpower Motorshield
+========================
 
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
 
-# Image
+# 📸 Image
 
-![LXRobotics P5 HighpowerMotorshield](https://raw.githubusercontent.com/lxrobotics/HighpowerMotorshield/master/images/highpower-motorshield-side-small.jpg)
+![LXRobotics P5 HighpowerMotorshield](images/highpower-motorshield-side-small.jpg)
 
-# Description
+# 📂 Description
 
 The Highpower Motorshield facilitates the control of a highpower DC (direct current) motor (18 V / 46 A) with an Arduino. The shield also permits the measurement of the motor current. For a quick and easy start, an open source Arduino library with sample programs is available.
 
@@ -21,9 +22,4 @@ The Highpower Motorshield facilitates the control of a highpower DC (direct curr
 * Current measurement of the motor current
 * Arduino Library with example programs is available on GitHub
 
-# ROS Package for P5 HighpowerMotorshield
-https://github.com/lxrobotics/ardumotor
-
-# Video
-
-[![VIDEO1](http://img.youtube.com/vi/um3spJtDs_k/0.jpg)](https://www.youtube.com/watch?v=um3spJtDs_k "LXRobotics Highpower Motorshield")
+# 🎥 [Video](images/highpower_motorshield_demo.mp4)
